@@ -1,5 +1,11 @@
 {% extends "bootstrap/base.html" %}
 
+{% block head %}
+{{ super() }}
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"
+        type="image/x-icon">
+{% endblock %}
+
 {% block title %}flaskBlog{% endblock %}
 
 {% block navbar %}
@@ -23,6 +29,8 @@
 </div>
 {% endblock %}
 
+{% block content %}
 <div class="container">
-{% block content %}{% endblock %}
+{% block page_content %}{% endblock %}
 </div>
+{% endblock %}
